@@ -23,6 +23,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
 }
 .blockContentLight__wrapper {
   height: 700px;
@@ -101,6 +102,100 @@
   transform: scale(0.95);
   transition: all 0.1s;
 }
+.blockContentLight__wrapper_contentBlock {
+  width: 100%;
+  height: 75%;
+  background-color: white;
+  margin-top: 32px;
+  border-radius: 10px;
+  box-shadow: 0px 5px 20px rgba(167, 166, 166, 0.11);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  padding: 0px 20px;
+}
+.blockContentLight__wrapper_contentBlock_content {
+  width: 100%;
+  height: 475px;
+}
+.blockContentLight__wrapper_contentBlock_navBlock {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.blockContentLight__wrapper_contentBlock_navBlock_count {
+  color: #99989d;
+  font-size: 14px;
+  width: 20%;
+}
+.blockContentLight__wrapper_contentBlock_navBlock_navButton {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 33%;
+}
+.blockContentLight__wrapper_contentBlock_navBlock_navButton_active {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  color: #5179c9;
+  font-size: 14px;
+  cursor: pointer;
+}
+.blockContentLight__wrapper_contentBlock_navBlock_navButton_active:hover {
+  transform: scale(1.05);
+  transition: all 0.1s;
+  color: #5179c9;
+}
+.blockContentLight__wrapper_contentBlock_navBlock_navButton_active:active {
+  transform: scale(0.95);
+  transition: all 0.1s;
+  color: #5179c9;
+}
+.blockContentLight__wrapper_contentBlock_navBlock_navButton_inactive {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  color: #99989d;
+  font-size: 14px;
+  cursor: pointer;
+}
+.blockContentLight__wrapper_contentBlock_navBlock_navButton_inactive:hover {
+  transform: scale(1.05);
+  transition: all 0.1s;
+  color: #706f72;
+}
+.blockContentLight__wrapper_contentBlock_navBlock_navButton_inactive:active {
+  transform: scale(0.95);
+  transition: all 0.1s;
+  color: #706f72;
+}
+.blockContentLight__wrapper_contentBlock_navBlock_clearCompleted {
+  width: 25%;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  color: #99989d;
+  font-size: 14px;
+  cursor: pointer;
+}
+.blockContentLight__wrapper_contentBlock_navBlock_clearCompleted:hover {
+  transform: scale(1.03);
+  transition: all 0.1s;
+  color: #706f72;
+}
+.blockContentLight__wrapper_contentBlock_navBlock_clearCompleted:active {
+  transform: scale(0.97);
+  transition: all 0.1s;
+  color: #706f72;
+}
+.blockContentLight__footerText {
+  color: #706f72;
+  margin-top: 70px;
+}
 
 @media (max-width: 1024px) {
   .titleIMG {
@@ -119,18 +214,57 @@
     width: 25%;
     font-size: 16px;
   }
+  .blockContentLight__wrapper_contentBlock {
+    padding: 10px 20px;
+  }
+  .blockContentLight__wrapper_contentBlock_navBlock_navButton {
+    width: 140px;
+  }
 }
 @media (max-width: 425px) {
+  .blockContentLight {
+    padding: 0 10px;
+    box-sizing: border-box;
+  }
   .blockContentLight__wrapper {
     width: 100%;
-    box-sizing: content-box;
-    padding: 10px;
+    box-sizing: border-box;
+    padding: 0;
+  }
+  .blockContentLight__wrapper_titleBlock {
+    margin-top: 10px;
   }
   .blockContentLight__wrapper_inputBlock_input {
     width: 50%;
+    font-size: 18px;
+  }
+  .blockContentLight__wrapper_inputBlock_input::-moz-placeholder {
+    font-size: 18px;
+  }
+  .blockContentLight__wrapper_inputBlock_input::placeholder {
+    font-size: 18px;
   }
   .blockContentLight__wrapper_inputBlock_addButton {
     width: 30%;
     font-size: 14px;
+  }
+  .blockContentLight__wrapper_contentBlock {
+    padding: 10px 20px;
+  }
+  .blockContentLight__wrapper_contentBlock_navBlock_count {
+    text-align: center;
+    font-size: 12px;
+  }
+  .blockContentLight__wrapper_contentBlock_navBlock_navButton {
+    width: 120px;
+  }
+  .blockContentLight__wrapper_contentBlock_navBlock_navButton_active {
+    font-size: 12px;
+  }
+  .blockContentLight__wrapper_contentBlock_navBlock_navButton_inactive {
+    font-size: 12px;
+  }
+  .blockContentLight__wrapper_contentBlock_navBlock_clearCompleted {
+    font-size: 12px;
   }
 }/*# sourceMappingURL=LightTheme.css.map */

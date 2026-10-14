@@ -23,6 +23,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
 }
 .blockContentDark__wrapper {
   height: 700px;
@@ -101,6 +102,100 @@
   transform: scale(0.95);
   transition: all 0.1s;
 }
+.blockContentDark__wrapper_contentBlock {
+  width: 100%;
+  height: 75%;
+  background-color: #25273c;
+  margin-top: 32px;
+  border-radius: 10px;
+  box-shadow: 0px 5px 20px rgba(167, 166, 166, 0.11);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  padding: 0px 20px;
+}
+.blockContentDark__wrapper_contentBlock_content {
+  width: 100%;
+  height: 475px;
+}
+.blockContentDark__wrapper_contentBlock_navBlock {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.blockContentDark__wrapper_contentBlock_navBlock_count {
+  color: silver;
+  font-size: 14px;
+  width: 20%;
+}
+.blockContentDark__wrapper_contentBlock_navBlock_navButton {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 33%;
+}
+.blockContentDark__wrapper_contentBlock_navBlock_navButton_active {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  color: #5179c9;
+  font-size: 14px;
+  cursor: pointer;
+}
+.blockContentDark__wrapper_contentBlock_navBlock_navButton_active:hover {
+  transform: scale(1.05);
+  transition: all 0.1s;
+  color: #5179c9;
+}
+.blockContentDark__wrapper_contentBlock_navBlock_navButton_active:active {
+  transform: scale(0.95);
+  transition: all 0.1s;
+  color: #5179c9;
+}
+.blockContentDark__wrapper_contentBlock_navBlock_navButton_inactive {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  color: silver;
+  font-size: 14px;
+  cursor: pointer;
+}
+.blockContentDark__wrapper_contentBlock_navBlock_navButton_inactive:hover {
+  transform: scale(1.05);
+  transition: all 0.1s;
+  color: white;
+}
+.blockContentDark__wrapper_contentBlock_navBlock_navButton_inactive:active {
+  transform: scale(0.95);
+  transition: all 0.1s;
+  color: white;
+}
+.blockContentDark__wrapper_contentBlock_navBlock_clearCompleted {
+  width: 25%;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  color: silver;
+  font-size: 14px;
+  cursor: pointer;
+}
+.blockContentDark__wrapper_contentBlock_navBlock_clearCompleted:hover {
+  transform: scale(1.03);
+  transition: all 0.1s;
+  color: white;
+}
+.blockContentDark__wrapper_contentBlock_navBlock_clearCompleted:active {
+  transform: scale(0.97);
+  transition: all 0.1s;
+  color: white;
+}
+.blockContentDark__footerText {
+  color: silver;
+  margin-top: 70px;
+}
 
 @media (max-width: 1024px) {
   .titleIMG {
@@ -119,21 +214,50 @@
     width: 25%;
     font-size: 16px;
   }
+  .blockContentDark__wrapper_contentBlock {
+    padding: 10px 20px;
+  }
+  .blockContentDark__wrapper_contentBlock_navBlock_navButton {
+    width: 140px;
+  }
 }
 @media (max-width: 425px) {
   .blockContentDark__wrapper {
     width: 100%;
-    box-sizing: content-box;
+    box-sizing: border-box;
     padding: 10px;
   }
   .blockContentDark__wrapper_inputBlock_input {
     width: 50%;
+    font-size: 18px;
+  }
+  .blockContentDark__wrapper_inputBlock_input::-moz-placeholder {
+    font-size: 18px;
+  }
+  .blockContentDark__wrapper_inputBlock_input::placeholder {
+    font-size: 18px;
   }
   .blockContentDark__wrapper_inputBlock_addButton {
     width: 30%;
     font-size: 14px;
   }
-}
-p {
-  color: white;
+  .blockContentDark__wrapper_contentBlock {
+    padding: 10px 20px;
+  }
+  .blockContentDark__wrapper_contentBlock_navBlock_count {
+    text-align: center;
+    font-size: 12px;
+  }
+  .blockContentDark__wrapper_contentBlock_navBlock_navButton {
+    width: 120px;
+  }
+  .blockContentDark__wrapper_contentBlock_navBlock_navButton_active {
+    font-size: 12px;
+  }
+  .blockContentDark__wrapper_contentBlock_navBlock_navButton_inactive {
+    font-size: 12px;
+  }
+  .blockContentDark__wrapper_contentBlock_navBlock_clearCompleted {
+    font-size: 12px;
+  }
 }/*# sourceMappingURL=DarkTheme.css.map */

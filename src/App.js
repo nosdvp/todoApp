@@ -11,25 +11,31 @@ function App(){
   
   const [saveTask, setSaveTask] = useState([])
 
+  const [navMode, setNavMode] = useState('all')
+
   return(
       <>
         {theme === 'dark' ? (
         <DarkTheme
           saveTask = {saveTask}
           enterTask = {enterTask}
+          navMode = {navMode}
 
           setTheme = {setTheme}
           setSaveTask = {setSaveTask}
           setEnterTask = {setEnterTask}
+          setNavMode = {setNavMode}
         />
         ) : (
           <LightTheme
             saveTask = {saveTask}
             enterTask = {enterTask}
+            navMode = {navMode}
 
             setTheme = {setTheme}
             setSaveTask = {setSaveTask}
             setEnterTask = {setEnterTask}
+            setNavMode = {setNavMode}
           />
         )}
       </>

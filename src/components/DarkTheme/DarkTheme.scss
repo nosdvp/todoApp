@@ -34,6 +34,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
     &__wrapper{
         height: 700px;
         width: 500px;
@@ -96,6 +97,100 @@
                 @include animButton;
             }
         }
+        &_contentBlock{
+            width: 100%;
+            height: 75%;
+            background-color: #25273c;
+            margin-top: 32px;
+            border-radius: 10px;
+            box-shadow: 0px 5px 20px rgba(167, 166, 166, 0.11);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-direction: column;
+            padding: 0px 20px;
+            &_content{
+                width: 100%;
+                height: 475px;
+            }
+            &_navBlock{
+                width: 100%;
+                height: 50px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                &_count{
+                    color: silver;
+                    font-size: 14px;
+                    width: 20%;
+                }
+                &_navButton{
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    width: 33%;
+                    &_active{
+                        border: none;
+                        outline: none;
+                        background-color: transparent;
+                        color: #5179c9;
+                        font-size: 14px;
+                        cursor: pointer;
+                        &:hover{
+                            transform: scale(1.05);
+                            transition: all 0.1s;
+                            color: #5179c9;
+                        }
+                        &:active{
+                            transform: scale(0.95);
+                            transition: all 0.1s;
+                            color: #5179c9;
+                        }
+                    }
+                    &_inactive{
+                        border: none;
+                        outline: none;
+                        background-color: transparent;
+                        color: silver;
+                        font-size: 14px;
+                        cursor: pointer;
+                        &:hover{
+                            transform: scale(1.05);
+                            transition: all 0.1s;
+                            color: white;
+                        }
+                        &:active{
+                            transform: scale(0.95);
+                            transition: all 0.1s;
+                            color: white;
+                        }
+                    }
+                }
+                &_clearCompleted{
+                    width: 25%;
+                    border: none;
+                    outline: none;
+                    background-color: transparent;
+                    color: silver;
+                    font-size: 14px;
+                    cursor: pointer;
+                    &:hover{
+                            transform: scale(1.03);
+                            transition: all 0.1s;
+                            color: white;
+                        }
+                        &:active{
+                            transform: scale(0.97);
+                            transition: all 0.1s;
+                            color: white;
+                        }
+                }
+            }
+        }
+    }
+    &__footerText{
+        color: silver;
+        margin-top: 70px;
     }
 }
 
@@ -119,6 +214,17 @@
                     font-size: 16px;
                 }
             }
+            &_contentBlock{
+                padding: 10px 20px;
+                &_content{
+                    
+                }
+                &_navBlock{
+                    &_navButton{
+                        width: 140px;
+                    }
+                }
+            }
         }
     }
 }
@@ -127,21 +233,45 @@
     .blockContentDark{
         &__wrapper{
             width: 100%;
-            box-sizing: content-box;
+            box-sizing: border-box;
             padding: 10px;
             &_inputBlock{
                 &_input{
                     width: 50%;
+                    font-size: 18px;
+                    &::placeholder{
+                        font-size: 18px;
+                    }
                 }
                 &_addButton{
                     width: 30%;
                     font-size: 14px;
                 }
             }
+            &_contentBlock{
+                padding: 10px 20px;
+                &_content{
+                    
+                }
+                &_navBlock{   
+                    &_count{
+                        text-align: center;
+                        font-size: 12px;
+                    }
+                    &_navButton{
+                        width: 120px;
+                        &_active{
+                            font-size: 12px;
+                        }
+                        &_inactive{
+                            font-size: 12px;
+                        }
+                    }
+                    &_clearCompleted{
+                        font-size: 12px;
+                    }
+                }
+            }
         }
     }
-}
-
-p{
-    color: white;
 }
