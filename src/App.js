@@ -9,7 +9,9 @@ function App(){
 
   const [enterTask, setEnterTask] = useState('')
   
-  const [saveTask, setSaveTask] = useState([])
+  const [allTask, setAllTask] = useState([])
+  const [activeTask, setActiveTask] = useState([])
+  const [completedTask, setCompletedTask] = useState([])
 
   const [navMode, setNavMode] = useState('all')
 
@@ -17,25 +19,33 @@ function App(){
       <>
         {theme === 'dark' ? (
         <DarkTheme
-          saveTask = {saveTask}
+          allTask = {allTask}
           enterTask = {enterTask}
           navMode = {navMode}
+          activeTask = {activeTask}
+          completedTask = {completedTask}
 
           setTheme = {setTheme}
-          setSaveTask = {setSaveTask}
+          setAllTask = {setAllTask}
           setEnterTask = {setEnterTask}
           setNavMode = {setNavMode}
+          setActiveTask = {setActiveTask}
+          setCompletedTask = {setCompletedTask}
         />
         ) : (
           <LightTheme
-            saveTask = {saveTask}
+            allTask = {allTask}
             enterTask = {enterTask}
             navMode = {navMode}
+            activeTask = {activeTask}
+            completedTask = {completedTask}
 
             setTheme = {setTheme}
-            setSaveTask = {setSaveTask}
+            setAllTask = {setAllTask}
             setEnterTask = {setEnterTask}
             setNavMode = {setNavMode}
+            setActiveTask = {setActiveTask}
+            setCompletedTask = {setCompletedTask}
           />
         )}
       </>

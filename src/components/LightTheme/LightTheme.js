@@ -4,13 +4,17 @@ import moon from '../../img/icon-moon.svg'
 
 const LightTheme = ({
     enterTask,
-    saveTask,
+    allTask,
     navMode,
+    activeTask,
+    completedTask,
 
     setTheme,
     setEnterTask,
-    setSaveTask,
+    setAllTask,
     setNavMode,
+    setActiveTask,
+    setCompletedTask
 }) => {
   return (
     <div className='wrapperLight'>
@@ -34,7 +38,7 @@ const LightTheme = ({
                         <button 
                             onClick={() => {
                                 setEnterTask('')
-                                setSaveTask(prev => [...prev, enterTask])
+                                setAllTask(prev => [...prev, enterTask])
                             }} 
                             className='blockContentLight__wrapper_inputBlock_addButton'>Add Task</button>
                     </div>
@@ -52,7 +56,7 @@ const LightTheme = ({
                         </div>
 
                         <div className='blockContentLight__wrapper_contentBlock_navBlock'>
-                            <div className='blockContentLight__wrapper_contentBlock_navBlock_count'>{saveTask.length} items left</div>
+                            <div className='blockContentLight__wrapper_contentBlock_navBlock_count'>{allTask.length} items left</div>
                             <div className='blockContentLight__wrapper_contentBlock_navBlock_navButton'>
                                 <button 
                                     onClick={() => setNavMode('all')}
