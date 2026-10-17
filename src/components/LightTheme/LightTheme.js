@@ -1,6 +1,7 @@
 import React from 'react'
 import './LightTheme.css'
 import moon from '../../img/icon-moon.svg'
+import cross from '../../img/icon-cross.svg'
 
 const LightTheme = ({
     enterTask,
@@ -47,11 +48,50 @@ const LightTheme = ({
                     <div className='blockContentLight__wrapper_contentBlock'>
                         <div className='blockContentLight__wrapper_contentBlock_content'>
                             {navMode === 'all' ? (
-                                <></>
+                                <>
+                                    {allTask.map((item, index) => (
+                                        <div className='blockContentLight__wrapper_contentBlock_content_visibleAllTask'>
+                                            <div className='blockContentLight__wrapper_contentBlock_content_visibleAllTask_circle'></div>
+                                            <div className='blockContentLight__wrapper_contentBlock_content_visibleAllTask_contentAndDelet'>
+                                                <p onClick={() => {
+                                                    setCompletedTask(prev => [...prev, item])
+                                                    setActiveTask(currentItem => currentItem.filter(task => task !== item))
+                                                }}>{item}</p>
+                                                <img src={cross}/>
+                                            </div>
+                                        </div>
+                                    ))}
+                                </>
                             ) : navMode === 'active' ? (
-                                <></>
+                                <>
+                                    {activeTask.map((item, index) => (
+                                        <div className='blockContentLight__wrapper_contentBlock_content_visibleActiveTask'>
+                                            <div className='blockContentLight__wrapper_contentBlock_content_visibleActiveTask_circle'></div>
+                                            <div className='blockContentLight__wrapper_contentBlock_content_visibleActiveTask_contentAndDelet'>
+                                                <p onClick={() => {
+                                                    setCompletedTask(prev => [...prev, item])
+                                                    setActiveTask(currentItem => currentItem.filter(task => task !== item))
+                                                }}>{item}</p>
+                                                <img src={cross}/>
+                                            </div>
+                                        </div>
+                                    ))}
+                                </>
                             ) : navMode === 'completed' ? (
-                                <></>
+                                <>
+                                    {completedTask.map((item, index) => (
+                                        <div className='blockContentDark__wrapper_contentBlock_content_visibleCompletedTask'>
+                                            <div className='blockContentLight__wrapper_contentBlock_content_visibleCompletedTask_circle'></div>
+                                            <div className='blockContentLight__wrapper_contentBlock_content_visibleCompletedTask_contentAndDelet'>
+                                                <p onClick={() => {
+                                                    setCompletedTask(prev => [...prev, item])
+                                                    setActiveTask(currentItem => currentItem.filter(task => task !== item))
+                                                }}>{item}</p>
+                                                <img src={cross}/>
+                                            </div>
+                                        </div>
+                                    ))}
+                                </>
                             ) : null}
                         </div>
 

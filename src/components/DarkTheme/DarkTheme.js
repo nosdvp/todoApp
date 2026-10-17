@@ -15,7 +15,7 @@ const DarkTheme = ({
     setAllTask,
     setNavMode,
     setActiveTask,
-    setCompletedTask
+    setCompletedTask,
 }) => {
   return (
     <div className='wrapperDark'>
