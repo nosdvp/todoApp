@@ -49,51 +49,98 @@ const LightTheme = ({
                         <div className='blockContentLight__wrapper_contentBlock_content'>
                             {navMode === 'all' ? (
                                 <>
-                                    {allTask.map((item, index) => (
-                                        <div className='blockContentLight__wrapper_contentBlock_content_visibleAllTask'>
-                                            <div className='blockContentLight__wrapper_contentBlock_content_visibleAllTask_circle'></div>
-                                            <div className='blockContentLight__wrapper_contentBlock_content_visibleAllTask_contentAndDelet'>
-                                                <p onClick={() => {
-                                                    setCompletedTask(prev => [...prev, item])
-                                                    setActiveTask(currentItem => currentItem.filter(task => task !== item))
-                                                }}>{item}</p>
-                                                <img src={cross}/>
-                                            </div>
-                                        </div>
-                                    ))}
-                                </>
-                            ) : navMode === 'active' ? (
-                                <>
-                                    {activeTask.map((item, index) => (
-                                        <div className='blockContentLight__wrapper_contentBlock_content_visibleActiveTask'>
-                                            <div className='blockContentLight__wrapper_contentBlock_content_visibleActiveTask_circle'></div>
-                                            <div className='blockContentLight__wrapper_contentBlock_content_visibleActiveTask_contentAndDelet'>
-                                                <p onClick={() => {
-                                                    setCompletedTask(prev => [...prev, item])
-                                                    setActiveTask(currentItem => currentItem.filter(task => task !== item))
-                                                }}>{item}</p>
-                                                <img src={cross}/>
-                                            </div>
-                                        </div>
-                                    ))}
-                                </>
-                            ) : navMode === 'completed' ? (
-                                <>
-                                    {completedTask.map((item, index) => (
-                                        <div className='blockContentDark__wrapper_contentBlock_content_visibleCompletedTask'>
-                                            <div className='blockContentLight__wrapper_contentBlock_content_visibleCompletedTask_circle'></div>
-                                            <div className='blockContentLight__wrapper_contentBlock_content_visibleCompletedTask_contentAndDelet'>
-                                                <p onClick={() => {
-                                                    setCompletedTask(prev => [...prev, item])
-                                                    setActiveTask(currentItem => currentItem.filter(task => task !== item))
-                                                }}>{item}</p>
-                                                <img src={cross}/>
-                                            </div>
-                                        </div>
-                                    ))}
-                                </>
-                            ) : null}
-                        </div>
+                                    {allTask.map((item, index) => {
+                                        const isCompleted = completedTask.includes(item)
+                                            return (
+                                                <div
+                                                    key={index}
+                                                    className={
+                                                        isCompleted
+                                                            ? 'blockContentLight__wrapper_contentBlock_content_visibleCompletedTask'
+                                                            : 'blockContentLight__wrapper_contentBlock_content_visibleAllTask'
+                                                        }
+                                                    >
+                                                        <div
+                                                            className={
+                                                                isCompleted
+                                                                    ? 'blockContentLight__wrapper_contentBlock_content_visibleCompletedTask_circle'
+                                                                    : 'blockContentLight__wrapper_contentBlock_content_visibleAllTask_circle'
+                                                                        }
+                                                                ></div>
+                                                                <div
+                                                                    className={
+                                                                        isCompleted
+                                                                            ? 'blockContentLight__wrapper_contentBlock_content_visibleCompletedTask_contentAndDelet'
+                                                                            : 'blockContentLight__wrapper_contentBlock_content_visibleAllTask_contentAndDelet'
+                                                                        }
+                                                                    >
+                                                                        <p onClick={() => {
+                                                                            if(isCompleted){
+                                                                                setCompletedTask(prev => prev.filter(task => task !== item))
+                                                                                setActiveTask(prev => [...prev, item])
+                                                                            }else{
+                                                                                setCompletedTask(prev => [...prev, item])
+                                                                                setActiveTask(prev => prev.filter(task => task !== item))
+                                                                            }
+                                                                        }}>
+                                                                            {item}
+                                                                        </p>
+                                                                        <img
+                                                                            src={cross}
+                                                                            onClick={() => {
+                                                                                setAllTask(prev =>
+                                                                                    prev.filter(task => task !== item)
+                                                                                )
+                                                                                setActiveTask(prev =>
+                                                                                    prev.filter(task => task !== item)
+                                                                                )
+                                                                                setCompletedTask(prev =>
+                                                                                    prev.filter(task => task !== item)
+                                                                                )
+                                                                            }}
+                                                                        />
+                                                                    </div>
+                                                                </div>
+                                            )
+                                        })}
+                                        </>
+                                        ) : navMode === 'active' ? (
+                                        <>
+                                            {activeTask.map((item, index) => (
+                                                <div className='blockContentLight__wrapper_contentBlock_content_visibleActiveTask'>
+                                                    <div className='blockContentLight__wrapper_contentBlock_content_visibleActiveTask_circle'></div>
+                                                        <div className='blockContentLight__wrapper_contentBlock_content_visibleActiveTask_contentAndDelet'>
+                                                            <p onClick={() => {
+                                                                setCompletedTask(prev => [...prev, item])
+                                                            }}>{item}</p>
+                                                            <img src={cross}
+                                                                onClick={() => {
+                                                                    setAllTask(currentItem => currentItem.filter(task => task !== item))
+                                                                    setActiveTask(currentItem => currentItem.filter(task => task !== item))
+                                                                }}
+                                                            />
+                                                        </div>
+                                                </div>
+                                            ))}
+                                        </>
+                                        ) : navMode === 'completed' ? (
+                                        <>
+                                            {completedTask.map((item, index) => (
+                                                <div className='blockContentLight__wrapper_contentBlock_content_visibleCompletedTask'>
+                                                    <div className='blockContentLight__wrapper_contentBlock_content_visibleCompletedTask_circle'></div>
+                                                        <div className='blockContentLight__wrapper_contentBlock_content_visibleCompletedTask_contentAndDelet'>
+                                                            <p onClick={() => {
+                                                                setCompletedTask(prev => [...prev, item])
+                                                            }}>{item}</p>
+                                                            <img src={cross}
+                                                                onClick={() => setCompletedTask(currentItem => currentItem.filter(task => task !== item))}
+                                                            />
+                                                        </div>
+                                                </div>
+                                            ))}
+                                    </>
+                                ) : null}
+                            </div>
 
                         <div className='blockContentLight__wrapper_contentBlock_navBlock'>
                             <div className='blockContentLight__wrapper_contentBlock_navBlock_count'>{allTask.length} items left</div>

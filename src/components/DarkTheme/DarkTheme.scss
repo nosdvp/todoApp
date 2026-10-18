@@ -113,8 +113,7 @@
                 width: 100%;
                 height: 475px;
                 &_visibleAllTask,
-                &_visibleActiveTask,
-                &_visibleCompletedTask{
+                &_visibleActiveTask{
                     width: 100%;
                     height: auto;
                     padding: 15px 15px;
@@ -164,6 +163,73 @@
                         p{
                             color: white;
                             font-size: 18px;
+                        }
+                        img{
+                            display: none;
+                            transition: transform 0.1s;
+                            &:hover{
+                                transform: scale(1.05);
+                            }
+                            &:active{
+                                transform: scale(0.95);
+                            }
+                        }
+                        &:hover{
+                            img{
+                                display: block;
+                            }
+                        }
+                    }
+                }
+                &_visibleCompletedTask{
+                    width: 100%;
+                    height: auto;
+                    padding: 15px 15px;
+                    border-bottom: 1px solid silver;
+                    display: flex;
+                    gap: 20px;
+                    cursor: pointer;
+                    &_circle{
+                        width: 30px;
+                        height: 30px;
+                        background: linear-gradient(150deg, #74c6ff, #a474ec);
+                        border-radius: 50%;
+                        position: relative;
+                        box-sizing: border-box;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        &::after{
+                            content: '';
+                            display: block;
+                            background-image: url(../../img/icon-check.svg);
+                            background-repeat: no-repeat;
+                            background-size: contain;
+                            width: 15px;
+                            height: 15px;
+                            margin-top: 5px;
+                            margin-left: 1px;
+                        }
+                    }
+                    &_contentAndDelet{
+                        width: 90%;
+                        height: auto;
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        p{
+                            color: #4e5065;
+                            font-size: 18px;
+                            position: relative;
+                            &::after{
+                                content: '';
+                                position: absolute;
+                                left: 0;
+                                top: 60%;
+                                width: 100%;
+                                height: 1px;
+                                background-color: #6a6c81;
+                            }
                         }
                         img{
                             display: none;
@@ -321,7 +387,19 @@
             &_contentBlock{
                 padding: 10px 20px;
                 &_content{
-                    
+                    &_visibleAllTask,
+                    &_visibleActiveTask{
+                        &_circle{
+                            width: 25px;
+                            height: 25px;
+                        }
+                    }
+                    &_visibleCompletedTask{
+                        &_circle{
+                            width: 25px;
+                            height: 25px;
+                        }
+                    }
                 }
                 &_navBlock{   
                     &_count{

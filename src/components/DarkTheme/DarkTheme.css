@@ -119,7 +119,7 @@
   width: 100%;
   height: 475px;
 }
-.blockContentDark__wrapper_contentBlock_content_visibleAllTask, .blockContentDark__wrapper_contentBlock_content_visibleActiveTask, .blockContentDark__wrapper_contentBlock_content_visibleCompletedTask {
+.blockContentDark__wrapper_contentBlock_content_visibleAllTask, .blockContentDark__wrapper_contentBlock_content_visibleActiveTask {
   width: 100%;
   height: auto;
   padding: 15px 15px;
@@ -128,7 +128,7 @@
   gap: 20px;
   cursor: pointer;
 }
-.blockContentDark__wrapper_contentBlock_content_visibleAllTask_circle, .blockContentDark__wrapper_contentBlock_content_visibleActiveTask_circle, .blockContentDark__wrapper_contentBlock_content_visibleCompletedTask_circle {
+.blockContentDark__wrapper_contentBlock_content_visibleAllTask_circle, .blockContentDark__wrapper_contentBlock_content_visibleActiveTask_circle {
   width: 30px;
   height: 30px;
   border: 2px solid rgba(192, 192, 192, 0.432);
@@ -136,11 +136,11 @@
   position: relative;
   box-sizing: border-box;
 }
-.blockContentDark__wrapper_contentBlock_content_visibleAllTask_circle:hover, .blockContentDark__wrapper_contentBlock_content_visibleActiveTask_circle:hover, .blockContentDark__wrapper_contentBlock_content_visibleCompletedTask_circle:hover {
+.blockContentDark__wrapper_contentBlock_content_visibleAllTask_circle:hover, .blockContentDark__wrapper_contentBlock_content_visibleActiveTask_circle:hover {
   border-color: transparent;
   box-shadow: 0 0 8px rgba(150, 225, 255, 0.35);
 }
-.blockContentDark__wrapper_contentBlock_content_visibleAllTask_circle:hover::before, .blockContentDark__wrapper_contentBlock_content_visibleActiveTask_circle:hover::before, .blockContentDark__wrapper_contentBlock_content_visibleCompletedTask_circle:hover::before {
+.blockContentDark__wrapper_contentBlock_content_visibleAllTask_circle:hover::before, .blockContentDark__wrapper_contentBlock_content_visibleActiveTask_circle:hover::before {
   content: "";
   position: absolute;
   inset: -2px;
@@ -152,28 +152,93 @@
   mask-composite: exclude;
   pointer-events: none;
 }
-.blockContentDark__wrapper_contentBlock_content_visibleAllTask_contentAndDelet, .blockContentDark__wrapper_contentBlock_content_visibleActiveTask_contentAndDelet, .blockContentDark__wrapper_contentBlock_content_visibleCompletedTask_contentAndDelet {
+.blockContentDark__wrapper_contentBlock_content_visibleAllTask_contentAndDelet, .blockContentDark__wrapper_contentBlock_content_visibleActiveTask_contentAndDelet {
   width: 90%;
   height: auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-.blockContentDark__wrapper_contentBlock_content_visibleAllTask_contentAndDelet p, .blockContentDark__wrapper_contentBlock_content_visibleActiveTask_contentAndDelet p, .blockContentDark__wrapper_contentBlock_content_visibleCompletedTask_contentAndDelet p {
+.blockContentDark__wrapper_contentBlock_content_visibleAllTask_contentAndDelet p, .blockContentDark__wrapper_contentBlock_content_visibleActiveTask_contentAndDelet p {
   color: white;
   font-size: 18px;
 }
-.blockContentDark__wrapper_contentBlock_content_visibleAllTask_contentAndDelet img, .blockContentDark__wrapper_contentBlock_content_visibleActiveTask_contentAndDelet img, .blockContentDark__wrapper_contentBlock_content_visibleCompletedTask_contentAndDelet img {
+.blockContentDark__wrapper_contentBlock_content_visibleAllTask_contentAndDelet img, .blockContentDark__wrapper_contentBlock_content_visibleActiveTask_contentAndDelet img {
   display: none;
   transition: transform 0.1s;
 }
-.blockContentDark__wrapper_contentBlock_content_visibleAllTask_contentAndDelet img:hover, .blockContentDark__wrapper_contentBlock_content_visibleActiveTask_contentAndDelet img:hover, .blockContentDark__wrapper_contentBlock_content_visibleCompletedTask_contentAndDelet img:hover {
+.blockContentDark__wrapper_contentBlock_content_visibleAllTask_contentAndDelet img:hover, .blockContentDark__wrapper_contentBlock_content_visibleActiveTask_contentAndDelet img:hover {
   transform: scale(1.05);
 }
-.blockContentDark__wrapper_contentBlock_content_visibleAllTask_contentAndDelet img:active, .blockContentDark__wrapper_contentBlock_content_visibleActiveTask_contentAndDelet img:active, .blockContentDark__wrapper_contentBlock_content_visibleCompletedTask_contentAndDelet img:active {
+.blockContentDark__wrapper_contentBlock_content_visibleAllTask_contentAndDelet img:active, .blockContentDark__wrapper_contentBlock_content_visibleActiveTask_contentAndDelet img:active {
   transform: scale(0.95);
 }
-.blockContentDark__wrapper_contentBlock_content_visibleAllTask_contentAndDelet:hover img, .blockContentDark__wrapper_contentBlock_content_visibleActiveTask_contentAndDelet:hover img, .blockContentDark__wrapper_contentBlock_content_visibleCompletedTask_contentAndDelet:hover img {
+.blockContentDark__wrapper_contentBlock_content_visibleAllTask_contentAndDelet:hover img, .blockContentDark__wrapper_contentBlock_content_visibleActiveTask_contentAndDelet:hover img {
+  display: block;
+}
+.blockContentDark__wrapper_contentBlock_content_visibleCompletedTask {
+  width: 100%;
+  height: auto;
+  padding: 15px 15px;
+  border-bottom: 1px solid silver;
+  display: flex;
+  gap: 20px;
+  cursor: pointer;
+}
+.blockContentDark__wrapper_contentBlock_content_visibleCompletedTask_circle {
+  width: 30px;
+  height: 30px;
+  background: linear-gradient(150deg, #74c6ff, #a474ec);
+  border-radius: 50%;
+  position: relative;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.blockContentDark__wrapper_contentBlock_content_visibleCompletedTask_circle::after {
+  content: "";
+  display: block;
+  background-image: url(../../img/icon-check.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 15px;
+  height: 15px;
+  margin-top: 5px;
+  margin-left: 1px;
+}
+.blockContentDark__wrapper_contentBlock_content_visibleCompletedTask_contentAndDelet {
+  width: 90%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.blockContentDark__wrapper_contentBlock_content_visibleCompletedTask_contentAndDelet p {
+  color: #4e5065;
+  font-size: 18px;
+  position: relative;
+}
+.blockContentDark__wrapper_contentBlock_content_visibleCompletedTask_contentAndDelet p::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 60%;
+  width: 100%;
+  height: 1px;
+  background-color: #6a6c81;
+}
+.blockContentDark__wrapper_contentBlock_content_visibleCompletedTask_contentAndDelet img {
+  display: none;
+  transition: transform 0.1s;
+}
+.blockContentDark__wrapper_contentBlock_content_visibleCompletedTask_contentAndDelet img:hover {
+  transform: scale(1.05);
+}
+.blockContentDark__wrapper_contentBlock_content_visibleCompletedTask_contentAndDelet img:active {
+  transform: scale(0.95);
+}
+.blockContentDark__wrapper_contentBlock_content_visibleCompletedTask_contentAndDelet:hover img {
   display: block;
 }
 .blockContentDark__wrapper_contentBlock_navBlock {
@@ -300,6 +365,14 @@
   }
   .blockContentDark__wrapper_contentBlock {
     padding: 10px 20px;
+  }
+  .blockContentDark__wrapper_contentBlock_content_visibleAllTask_circle, .blockContentDark__wrapper_contentBlock_content_visibleActiveTask_circle {
+    width: 25px;
+    height: 25px;
+  }
+  .blockContentDark__wrapper_contentBlock_content_visibleCompletedTask_circle {
+    width: 25px;
+    height: 25px;
   }
   .blockContentDark__wrapper_contentBlock_navBlock_count {
     text-align: center;

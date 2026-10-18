@@ -14,14 +14,26 @@ function App(){
 
     return saveTasks ? JSON.parse(saveTasks) : []
   })
-  const [activeTask, setActiveTask] = useState([])
-  const [completedTask, setCompletedTask] = useState([])
+  
+  const [activeTask, setActiveTask] = useState(() => {
+    const saveTasks = localStorage.getItem('activeTasks')
+
+    return saveTasks ? JSON.parse(saveTasks) : []
+  })
+
+  const [completedTask, setCompletedTask] = useState(() => {
+    const saveTasks = localStorage.getItem('compTasks')
+
+    return saveTasks ? JSON.parse(saveTasks) : []
+  })
 
   const [navMode, setNavMode] = useState('all')
 
   useEffect(() => {
     localStorage.setItem('tasks', JSON.stringify(allTask))
-  })
+    localStorage.setItem('activeTasks', JSON.stringify(activeTask))
+    localStorage.setItem('compTasks', JSON.stringify(completedTask))
+  }, [allTask, activeTask, completedTask])
 
   return(
       <>
